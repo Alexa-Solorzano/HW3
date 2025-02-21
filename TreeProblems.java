@@ -38,8 +38,25 @@ public class TreeProblems {
     // This can be done numerous ways, but once such will only that
     // *several* lines of code. Hint: create two temporary TreeSets and utilize the
     // methods retainAll(), addAll(), and removeAll(). But in the end, get something to work.
+    // Create temporary sets for setA and setB
+    TreeSet<Integer> tempA = new TreeSet<>(setA);
+    TreeSet<Integer> tempB = new TreeSet<>(setB);
 
-    return setA;
+    tempA.retainAll(setB); //retaining all the common elements between setA & setB
+
+    // tempA only contains elements that are common to both setA and setB
+    
+    setA.removeAll(tempA); //remove common elements from tempA (all elements that are also in tempA (common elements between setA & setB will be removed) 
+    setB.removeAll(tempA); //remove common elements from setA (that are placed in tempA)
+
+    // setA and setB no longer contain any common elements 
+
+    TreeSet<Integer> result = new TreeSet<>();
+    // add all the remaining elements from setA and setB into result (should be the elements that are only in one of the sets, but not both)
+    result.addAll(setA);
+    result.addAll(setB);
+    
+    return result;
   }
 
 
