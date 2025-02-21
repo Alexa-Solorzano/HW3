@@ -86,17 +86,33 @@ public class TreeProblems {
    */
 
   public static void removeEven(Map<Integer, String> treeMap) {
-// Iterate over the treeMap entries through entrySet() --> returns a set of key-value pairs (Map.Entry objects)
-// key = integer value = string 
-    
-  for(Map.Entry<Integer, String> entry : treeMap.entrySet()){
-    if(entry.getKey() % 2 == 0){ // after we get the key, check if it is even
-      treeMap.remove(entry.getKey()); //if it is even, remove from treemap by specifying which key 
-    }
-  }
+/* THIS WAS MY BEFORE: 
+ * However, I got a ConcurrentModificationException because i was trying to modify treeMap by removing entries while iterating over it using entrySet()
+ 
+ *
+ * // Iterate over the treeMap entries through entrySet() --> returns a set of key-value pairs (Map.Entry objects)
+ * // key = integer value = string 
+ *    
+ * for(Map.Entry<Integer, String> entry : treeMap.entrySet()){
+ *  if(entry.getKey() % 2 == 0){ // after we get the key, check if it is even
+ *     treeMap.remove(entry.getKey()); //if it is even, remove from treemap by specifying which key 
+ *   }
+ * }
+ *
+ *  return;
+ * }
+ *
+ * I will use an iterator to safely remove entried from entrySet
+ */
+    Iterator<Map.Entry<Integer, String>> iterator = treeMap.entrySet().iterator();
 
-    return;
-  }
+    while(iterator.hasNext()){
+      Map.Entry<Integer, String> entry = iterator.next();
+
+      if(entry.getKey() % 2 == 0){
+        iterator.remove();
+      }
+    }
 
 
   /**
