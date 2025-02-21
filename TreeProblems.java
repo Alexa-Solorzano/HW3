@@ -77,6 +77,28 @@ public class TreeProblems {
    *
    * Given two treeMaps, each with the key as an integer, and the value as a String,
    * return a boolean value indicating if the two trees are equal or not.
+   *
+   * For two treeMpas to be equal,
+   * 1) They both must contain the same # of key-value pairs
+   * 2) They both must have the same keys 
+   * 3) For every key, both treeMaps must have the same corresponding value
+   * 
+   * In order to accurately compare the keys & values of the two treeMaps, 
+   * we can use these methods:
+   * Object Map.Entry has the following methods
+   * KeyType getKey()
+   * ValueType getValue()
+   * 
+   * if the treeMap sizes are different, return false 
+   * Iterate over tree1
+   * Declare variables that represent the key & value and place the extracted key & value from tree1 into the variable
+   * Now, we have the key-value pair from tree1
+   * Check for matching key & valye in tree2
+   * if(tree2 does not contain the same key value as tree1 or does not contain the same key value)
+   * return false; 
+   *
+   * since no differences where found, 
+   * return true;
    */
 
   public boolean treesEqual(Map<Integer, String> tree1,Map<Integer, String> tree2 ) {
