@@ -17,6 +17,14 @@ public class TreeProblems {
    * Given two TreeSets of integers, return a TreeSet containing all elements 
    * that are NOT in both sets. In other words, return a TreeSet of all the
    * elements that are in one set but not the other.
+   *
+   * Retain the common elements (the elements in both sets) by using method retainAll() one setA to keep only the elements that are also on setB
+   * Create temporary sets (tempA and tempB) to hold the contents of setA and setB respectively 
+   * Add elements to the temporary sets 
+   * Remove common elements (since we are trying to return the a TreeSet with elements in setA and setB that are unique to each other) by using the method removeAll() on each temp set to remove the common elements
+   * After modidying tempA and tempB we have to unite them into one single TreeSet --> create a result treeset and use method addAll between tempA and tempB 
+   * return the new treeset
+   * 
    */
   
   public static Set<Integer> different(Set<Integer> setA, Set<Integer> setB) {
