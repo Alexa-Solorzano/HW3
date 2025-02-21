@@ -86,8 +86,14 @@ public class TreeProblems {
    */
 
   public static void removeEven(Map<Integer, String> treeMap) {
-
-    // INSERT CODE HERE.
+// Iterate over the treeMap entries through entrySet() --> returns a set of key-value pairs (Map.Entry objects)
+// key = integer value = string 
+    
+  for(Map.Entry<Integer, String> treeMap){
+    if(entry.getKey() % 2 == 0){ // after we get the key, check if it is even
+      treeMap.remove(Entry.getKey()); //if it is even, remove from treemap by specifying which key 
+    }
+  }
 
     return;
   }
