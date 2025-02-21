@@ -103,6 +103,17 @@ public class TreeProblems {
  * }
  *
  * I will use an iterator to safely remove entried from entrySet
+ * Iterator is a part of the java.util package to loop through collections and access each element one at a time
+ *
+ * Create an iterator to iterate over the entries
+ * treeMap.entrySet() returns key-value pairs from the treeMap. Each entry is a Map.Entry object (access to both the key and value)
+ * .iterator: method that returns an iterator for the EntrySet (iterate over the entries one by one)
+ * 
+ * while(there are more elements to iterate over)
+ *   retrieve the next entry (key-value pair) in the map and store it in an entry variable 
+ *   //check for even key
+ *   if(key is event)
+ *     remove the entry from the collection 
  */
     Iterator<Map.Entry<Integer, String>> iterator = treeMap.entrySet().iterator();
 
