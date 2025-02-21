@@ -130,9 +130,19 @@ public class TreeProblems {
 
   public boolean treesEqual(Map<Integer, String> tree1,Map<Integer, String> tree2 ) {
 
-    // INSERT CODE HERE
-
+  if(tree1.size() != tree2.size()){
     return false;
+  }
+//iterate over tree1 --> get access to each entry (aka key-value pair) in the map
+  for(Map.Entry<Integer, String> entry : tree1.entrySet()){
+    Integer key = entry.getKey(); //gives the key of the entry
+    String value = entry.getValue(); //gives the value of the entry
+    //check whether tree2 contains the same key as tree 1 & check whether the value corresponding to the current key in tree2 is the same value in tree1
+    if(!tree2.containsKey(key) || !tree2.get(key).equals(value)){
+      return false; //if either statements are untrue, return false
+    }
+  }
+    return true;
 
   }
 
