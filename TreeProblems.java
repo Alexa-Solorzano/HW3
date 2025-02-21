@@ -44,6 +44,24 @@ public class TreeProblems {
    *
    * Given a treeMap with the key as an integer, and the value as a String,
    * remove all <key, value> pairs where the key is even. 
+   *
+   * In 3B Sets and Maps presentation, we learned that we can see the overview of a map as a collection through 3 methods
+   * Set<KeyType> keyset () --> return simple collections (returns set of all keys in the map)
+   * Collection<ValueType> values() --> return simple collections (returns a collection of all the values in the map, but no access to the keys)
+   * Set<Map.Entry<KeyType,ValueType>> entrySet() --> results a set of entries (returns a set of Map.Entry<K, V> where each entry contains both the key & the value
+   *
+   * Set<Map.Entry<KeyType,ValueType>> entrySet() would be the most effective way to iterate over both the keys and values simultaneously
+   * It would be most helpful in removing all the <key, value> pairs where the key is even
+   * We know that an integer is even if when diving the integer by 2 results in a remainder of 0 
+   * Iterating through TreeMap will be harder since Map doesn't provide a iterator
+   * But as seen through the 3B Sets and Maps presentation, 
+   * We can use:
+   * // For-each loop for traversal over Map via entrySet() Method
+   *    for (Map.Entry mapElement : tm.entrySet()) { 
+   *
+   * Use entrySet() to get both key and value while iterating 
+   *    if(the key in the Map.Entry key is even){
+   *       remove the entry with the even key 
    */
 
   public static void removeEven(Map<Integer, String> treeMap) {
